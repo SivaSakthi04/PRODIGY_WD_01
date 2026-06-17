@@ -1,0 +1,143 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+#navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(12px);
+
+    transition:0.4s ease;
+}
+
+#navbar.scrolled{
+    background:rgba(0,0,0,0.85);
+    padding:15px 8%;
+    box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+.logo{
+    color:white;
+    font-size:30px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+    font-weight:500;
+    position:relative;
+    transition:0.3s;
+}
+
+/* Animated Underline */
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0%;
+    height:3px;
+
+    background:#00f7ff;
+    transition:0.4s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+    width:100%;
+}
+
+.nav-links a:hover{
+    color:#00f7ff;
+}
+
+/* SECTIONS */
+
+.section{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+.section h1{
+    font-size:4rem;
+}
+
+.section p{
+    font-size:1.3rem;
+    margin-top:10px;
+}
+
+/* Beautiful Gradient Backgrounds */
+
+.home{
+    background:linear-gradient(135deg,#667eea,#764ba2);
+}
+
+.about{
+    background:linear-gradient(135deg,#11998e,#38ef7d);
+}
+
+.services{
+    background:linear-gradient(135deg,#fc466b,#3f5efb);
+}
+
+.projects{
+    background:linear-gradient(135deg,#f7971e,#ffd200);
+}
+
+.contact{
+    background:linear-gradient(135deg,#00c6ff,#0072ff);
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    #navbar{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .nav-links{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .section h1{
+        font-size:2.5rem;
+    }
+}
